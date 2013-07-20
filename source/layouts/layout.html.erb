@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<title>Save the date - Responsive Wedding Invitation</title>
+<meta name="description" content="Save the date - Responsive, retina-ready, Wedding Invitation">
+<meta name="author" content="Evi Anagnostakou & Marios Antonoudiou">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--   Google fonts  -->
+<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=BenchNine:700' rel='stylesheet' type='text/css'>
+<!--   main stylesheet  -->
+<%= stylesheet_link_tag "all" %>
+
+<script >
+// iOS viewport scaling bug fix
+// https://gist.github.com/901295
+// Rewritten version
+// By @mathias, @cheeaun and @jdalton
+
+(function(doc) {
+
+var addEvent = 'addEventListener',
+    type = 'gesturestart',
+    qsa = 'querySelectorAll',
+    scales = [1, 1],
+    meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+function fix() {
+	meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+	doc.removeEventListener(type, fix, true);
+}
+
+if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+	fix();
+	scales = [.25, 1.6];
+	doc[addEvent](type, fix, true);
+}
+
+}(document));
+</script>
+
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- GoogleMaps -->
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<!-- GoogleMaps, photo gallery and slider -->
+
+
+<!-- SETTINGS STARTS -->
+<script>
+$(document).ready(function() {
+	// init Save the Date
+	save_the_date.init({
+		weddingDate: "2013/10/27, 20:00", 
+		//Date : enter your wedding date
+    labels: ["ημέρες", "ώρες", "λεπτά", "δευτερόλεπτα!"], 
+		//Array of strings : labels of time units
+		sendServerMessages: ["Thank you.", "Sorry, your message could not be sent due to an error."],
+		//Array of strings : Messages from the server on send
+		gallery : ["images/gallery/gallery1.jpg", "images/gallery/gallery2.jpg", "images/gallery/gallery3.jpg", "images/gallery/gallery4.jpg"],
+		//Array image pathes
+		titles : ['Just us', 'Reception', 'Flowers we chose', 'In the eyes'],
+		//Array of strings : corresponding titles
+		});	
+});
+</script>
+<!-- SETTINGS ENDS -->
+<%= javascript_include_tag "all" %>
+
+</head>
+<!--[if lt IE 9]> <body  id="top" class="ie-fix"><![endif]-->	
+<!--[if (gt IE 8)|!(IE)]><!--> <body  id="top"><!--<![endif]-->
+	
+	<!--- NAVIGATION STARTS -->
+	<div class="nav-container">
+		<div class="nav">
+			<a  id="full-menu" href="#">&equiv;</a>
+			<a class="to-scroll" href="#top">Αρχική</a>
+			<a class="to-scroll" href="#about">Οικογένειες</a>
+			<a class="to-scroll private-content" href="#ceremony">Τοποθεσία</a>
+			<a class="to-scroll private-content" href="#registry">Δώρα</a>
+			<!-- <a href="#" id="gallery">Gallery</a> -->
+			<a class="to-scroll private-content" href="#rsvp">Πρόσκληση</a>
+			<!-- <div class="effect"></div> -->
+		</div>
+	</div>
+	<!--- NAVIGATION ENDS -->
+	
+	<!-- HEADER STARTS -->
+	<%= partial "_shared/header" %>
+	<!-- HEADER ENDS -->
+	
+	<!--- MAIN CONTENT STARTS -->
+	<div class="content">
+	
+			<!-- ABOUT SECTION STARTS -->
+			<%= partial "_shared/about" %>			
+			<!-- ABOUT SECTION ENDS -->
+		
+			<!-- CEREMONY SECTION STARTS -->
+			<%= partial "_shared/ceremony" %>			
+			<!-- CEREMONY SECTION ENDS -->
+			
+			<!--- REGISTRY STARTS -->	
+			<%= partial "_shared/registry" %>
+			<!--- REGISTRY ENDS -->
+
+			<!--- RSVP STARTS -->
+			<%= partial "_shared/rsvp" %>
+ 			<!--- RSVP ENDS -->
+			
+			<!-- FOOTER STARTS -->
+			<footer id="footer">	
+				<p class="copyright"> &copy; 2013 <a href="#">Εύη Αναγνωστάκου & Μάριος Αντωνουδιού.</a> All rights reserved.</p>
+			</footer>
+			<!-- FOOTER ENDS -->
+			
+		</div>	
+		<!--- MAIN CONTENT ENDS -->
+		
+</body>
+</html>
