@@ -1,10 +1,17 @@
 $(document).ready(function(){
 
+	if ($.cookie("loggedin")){
+		$(".code-for-ceremony").hide('fast', function(){	
+    	$(".removeme-with-auth").hide();
+      $(".private-content").show();
+    });
+	}
+
 	// Ceremony details
 	$(".code-for-ceremony form").on("submit", function(e){
 	    e.preventDefault();
-	    
-	    if ($(".code-for-ceremony form input[type='text']").val() == "12345"){
+	 		$.cookie("loggedin", true);
+	    if ($(".code-for-ceremony form input[type='text']").val() == "loveandhappiness"){
 	        $(".code-for-ceremony").slideUp('fast', function(){	
 	        	$(".removeme-with-auth").remove();
 		        $(".private-content").slideDown(500, function(){
@@ -20,7 +27,7 @@ $(document).ready(function(){
 	//Pop up for Peiraios
 	$("#peiraios").on("click", function(e){
 		e.preventDefault();
-		$.fancybox.open("<h1>Στοιχεία τραπεζικού λογαριασμού</h1><p>Αριθμός λογαριασμού: 321321322121332121</p><p>IBAN: 32132132132132321321321</p><p>Όνομα δικαιούχου: Αναγνωστάκου Παρασκευή</p>")
+		$.fancybox.open("<h1>Στοιχεία τραπεζικού λογαριασμού</h1><p>Αριθμός λογαριασμού: 51 3204 7572 811</p><p>IBAN: GR 47 0172 1320 0051 3204 7572 811</p><p>Όνομα δικαιούχου: Αναγνωστάκου Παρασκευή</p>")
 		
 	});
 });

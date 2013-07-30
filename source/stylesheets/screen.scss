@@ -1607,3 +1607,45 @@ body {
 .nav-container a.private-content, .private-content {
     display: none;
 }
+
+#hotel {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+#hotel h4 {
+    text-transform: none;
+}
+#hotel a {
+    position: relative;
+    top: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background: darken(#bcdb73, 20%);
+    display: inline-block;
+    padding: 10px 1em;
+    -webkit-box-shadow: 0 3px 1px darken(#bcdb73, 30%);
+    -moz-box-shadow: 0 3px 1px darken(#bcdb73, 30%);
+    -o-box-shadow: 0 3px 1px darken(#bcdb73, 30%);
+    -ms-box-shadow: 0 3px 1px darken(#bcdb73, 30%);
+    box-shadow: 0 3px 1px darken(#bcdb73, 30%);
+    -webkit-text-shadow: 0 1px #888;
+    -moz-text-shadow: 0 1px #888;
+    -o-text-shadow: 0 1px #888;
+    -ms-text-shadow: 0 1px #888;
+    text-shadow: 0 1px #888;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -o-border-radius: 50px;
+    -ms-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+    cursor: pointer;
+    &:hover {
+        background: darken(#bcdb73, 17%);
+        text-decoration: none;
+    }
+}

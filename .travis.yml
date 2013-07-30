@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - "2.0.0"
+
+# uncomment this line if your project needs to run something other than `rake`:
+# script: bundle exec rspec spec
+
+env:
+  - deploy_host:
+  - deploy_user:
+  - deploy_password:
+  - deploy_path: 

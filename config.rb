@@ -36,7 +36,7 @@
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-activate :livereload
+# activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -50,6 +50,15 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+# Deploy details
+activate :deploy do |deploy|
+  deploy.method   = :ftp
+  deploy.host     = ENV[:deploy_host]
+  deploy.user     = ENV[:deploy_user]
+  deploy.password = ENV[:deploy_password]
+  deploy.path     = ENV[:deploy_path]
+end
 
 # Build-specific configuration
 configure :build do
