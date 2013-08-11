@@ -54,10 +54,10 @@ set :images_dir, 'images'
 # Deploy details
 activate :deploy do |deploy|
   deploy.method   = :ftp
-  deploy.host     = ENV[:deploy_host]
-  deploy.user     = ENV[:deploy_user]
-  deploy.password = ENV[:deploy_password]
-  deploy.path     = ENV[:deploy_path]
+  deploy.host     = ENV["deploy_host"]
+  deploy.user     = ENV["deploy_user"]
+  deploy.password = ENV["deploy_password"]
+  deploy.path     = ENV["deploy_path"]
 end
 
 # Build-specific configuration
