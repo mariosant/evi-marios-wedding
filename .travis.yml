@@ -8,3 +8,4 @@ env:
   - secure: BBoij9GSjp/YTsIEE3/gOWYKm9VR+zdbMJ+JjPunOd+iL4FIiM4m5en9QgD+z4I8fa64metTiz0pCeBdKWsXRb68NJk/ikbULRmeezHRDv5vxAvH5mUayH1QCjagf3d47RRbHscdGsTvOpMBCF7KgvSxXhkzIhvGseRxhYevu8Y=
   - secure: NBK3udC9PVZiEvix7d+o8DcyyEUZw5xKAUJQePToE2vs9BKj5aGxVnVrbjJhYufdxhYB0ejuG4vCHrK2lJ7HzawdKwLMDDuS9O93YJsLVdqCrhSXAddQ+XL1WhQJoD1JfcOoVqAY3rBV0Zkg1MQ/SJoBGxGMU649vqzBzJZmJRI=
   - secure: XCzus9K1fF9BDFIcFXLSlzFOMu+rHtCi//ngWY3VALQwZF2ryjJfWjJW8b8tQhj/lnD0oFesmzIoefSugl/nMhk68xzwlyOLm6HS3Zv2Ag0EKWeUnFltYARt+0ZPPHleFRUbDU2hCQqJG8l4jGluCTGzDiLi3LDUbn5gnOjtxks=
+after_success: bundle exec rake deploy

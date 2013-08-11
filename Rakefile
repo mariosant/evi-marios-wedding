@@ -2,7 +2,7 @@ desc "Build the website from source"
 task :build do
   puts "## Building website"
   status = system("middleman build --clean")
-  puts status ? "OK" : "FAILED"
+  fail "Build failed. Check the tracelog above." unless status
 end
 
 desc "Run the preview server at http://localhost:4567"
@@ -14,7 +14,7 @@ desc "Deploy website via ftp"
 task :deploy do
   puts "## Deploying website via ftp..."
   status = system("middleman deploy")
-  puts status ? "OK" : "FAILED"
+  fail "Deploying failed. Check the tracelog above." unless status
 end
 
 desc "Build and deploy website"
