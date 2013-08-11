@@ -6,7 +6,7 @@ rvm:
 # script: bundle exec rspec spec
 
 env:
-  - deploy_host:
+  - deploy_host: 
   - deploy_user:
   - deploy_password:
   - deploy_path: 
